@@ -1,0 +1,46 @@
+// Global style
+
+
+body {
+    margin: 0;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+// Spacing
+
+.container {
+    padding: 0 1.5rem;
+}
+
+.btnPrimary {
+    color: $white;
+    border: 0;
+    min-width: 20px;
+    text-decoration: none;
+    padding: 0.4em 1.4em;
+    font-family: body-font-family;
+    font-size: heading-font-size;
+    background-color: $lightBlue;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $white;
+        color: $lightBlue;
+        border: .1em solid $lightBlue;
+    }
+}
+
+.hideForMobile {  // hide for mobile and tablet
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hideForDesktop { // hide for desktop viewport widths
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}

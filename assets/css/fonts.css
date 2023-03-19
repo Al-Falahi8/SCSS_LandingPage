@@ -1,0 +1,8 @@
+@font-face {
+  font-family: body-font-family;
+  src: url(/assets/fonts/OpenSans-ExtraBold.ttf);
+}
+@font-face {
+  font-family: heading-font-family;
+  src: url(/assets/fonts/OpenSans-Regular.ttf);
+}

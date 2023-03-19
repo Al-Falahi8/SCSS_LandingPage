@@ -1,0 +1,2071 @@
+@charset "UTF-8";
+@font-face {
+  font-family: heading-font-family;
+  src: url(/assets/fonts/OpenSans-ExtraBold.ttf);
+}
+@font-face {
+  font-family: body-font-family;
+  src: url(/assets/fonts/OpenSans-Regular.ttf);
+}
+.has-fade {
+  visibility: hidden;
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 200ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.fade-out {
+  animation: fade-out 200ms ease-in-out forwards;
+}
+
+body {
+  margin: 0;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 1.5rem;
+}
+
+.btnPrimary {
+  color: #FFFFFF;
+  border: 0;
+  min-width: 20px;
+  text-decoration: none;
+  padding: 0.4em 1.4em;
+  font-family: body-font-family;
+  font-size: heading-font-size;
+  background-color: #0077FF;
+  cursor: pointer;
+}
+.btnPrimary:hover {
+  background-color: #FFFFFF;
+  color: #0077FF;
+  border: 0.1em solid #0077FF;
+}
+
+@media (max-width: 47.938em) {
+  .hideForMobile {
+    display: none;
+  }
+}
+
+@media (min-width: 48.000em) {
+  .hideForDesktop {
+    display: none;
+  }
+}
+
+.sidebar .phoneIcon {
+  width: 3%;
+  height: 5%;
+  z-index: 1;
+  position: fixed;
+  top: 25%;
+  left: 98.5%;
+  transform: translate(-50%, -50%);
+  background-color: #0077FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+.sidebar .phoneIcon:hover {
+  width: 5%;
+  height: 5%;
+  z-index: 1;
+  position: fixed;
+  top: 27.5%;
+  left: 98%;
+  transform: translate(-50%, -100%);
+  background-color: #0077FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.sidebar .mailIcon {
+  width: 3%;
+  height: 5%;
+  z-index: 1;
+  position: fixed;
+  top: 30.5%;
+  left: 98.5%;
+  transform: translate(-50%, -50%);
+  background-color: #0077FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.sidebar .mailIcon:hover {
+  width: 5%;
+  height: 5%;
+  z-index: 1;
+  position: fixed;
+  top: 31%;
+  left: 100%;
+  transform: translate(-90%, -60%);
+  line-height: 1;
+  background-color: #0077FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #FFFFFF;
+}
+header .headerMenu {
+  background: #FFFFFF;
+  padding: 0.625rem;
+  position: absolute;
+  width: calc(90% - 3em);
+  top: 9%;
+  left: 50%;
+  transform: translateX(-60%);
+  border-radius: 0.313em;
+  margin: 6em 2em;
+  z-index: 3;
+}
+header .headerMenu a {
+  display: block;
+  font-family: heading-font-family;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.063em;
+  padding: 0.625em;
+}
+header .headerMenu a:hover {
+  color: #0077FF;
+}
+header.open .navToggle > span:first-child {
+  transform: rotate(45deg);
+}
+header.open .navToggle > span:nth-child(2) {
+  opacity: 0;
+}
+header.open .navToggle > span:last-child {
+  transform: rotate(-45deg);
+}
+header .overlay {
+  opacity: 0;
+  position: fixed;
+  top: 5%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(#000000, transparent);
+}
+header .overlay.fade-in {
+  display: block;
+}
+header .overlay.fade-out {
+  display: none;
+}
+header .navbar {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: body-font-family;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+header .navbar .navbarLogo {
+  width: 6em;
+  height: 3em;
+}
+header .navbar .navbarRight {
+  color: #000000;
+}
+header .navbar .navbarRight > a {
+  font-family: heading-font-family;
+  font-weight: 800;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.063em;
+  padding: 1em 0.875em;
+}
+header .navbar .navbarRight a:hover {
+  color: #0077FF;
+}
+header .navbar .navToggle > span {
+  display: block;
+  width: 1.6em;
+  height: 0.1em;
+  background-color: #000000;
+  transition: all 300ms ease-in-out;
+  transform-origin: left center;
+}
+header .navbar .navToggle > span:not(:last-child) {
+  margin-bottom: 0.46em;
+}
+
+main .heroSection .picBox {
+  background-image: url("/assets/img/großglockner.jpg");
+  background-size: 140%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 30em;
+}
+main .heroSection .heroInfo {
+  position: absolute;
+  text-align: center;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .heroSection .heroInfo h1 {
+  color: #000000;
+  font-size: 2em;
+  font-family: heading-font-family;
+  padding-bottom: 0.8em;
+}
+main .mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .mainContainer .aboutSection {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25em;
+}
+main .mainContainer .aboutSection .aboutInfo .aboutTitle {
+  text-align: center;
+  font-family: heading-font-family;
+  font-weight: 800;
+}
+main .mainContainer .aboutSection .aboutInfo .aboutTitle span {
+  text-transform: uppercase;
+}
+main .mainContainer .aboutSection .aboutInfo .aboutParagraph {
+  text-align: center;
+  font-family: body-font-family;
+  font-size: 1em;
+  padding: 0 10em;
+}
+main .mainContainer .galerySection {
+  width: 80%;
+  display: flex;
+  gap: 1em;
+}
+main .mainContainer .galerySection .galeryRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+main .mainContainer .galerySection .galeryRow .picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25em;
+  height: 15em;
+  gap: 2em;
+}
+main .mainContainer .galerySection .galeryRow .picture img {
+  width: 100%;
+  height: 15em;
+  border-radius: 1em;
+}
+main .mainContainer .galerySection .galeryRow .picture :hover {
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1.1);
+}
+main .mainContainer .wikiInfo {
+  width: 80%;
+  height: 25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em 0;
+}
+main .mainContainer .wikiInfo .wikiText {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+main .mainContainer .wikiInfo .wikiText .wikititle {
+  font-family: heading-font-family;
+  font-size: 1em;
+  margin: 0;
+}
+main .mainContainer .wikiInfo .wikiText .wikititle > span {
+  text-transform: uppercase;
+}
+main .mainContainer .wikiInfo .wikiText .wikiPara {
+  font-family: body-font-family;
+  font-size: 1em;
+  text-align: left;
+  padding: 2em 0;
+  margin: 0;
+}
+main .mainContainer .wikiInfo .wikiPic {
+  display: flex;
+}
+main .mainContainer .wikiInfo .wikiPic .wikiIcon {
+  width: 4em;
+  height: 4em;
+  position: relative;
+  top: 0;
+  left: 5%;
+  border-radius: 50%;
+  background-color: #0077FF;
+}
+main .mainContainer .wikiInfo .wikiPic .wikiImg {
+  margin-top: 2em;
+}
+main .mainContainer .wikiInfo .wikiPic .wikiImg img {
+  width: 30em;
+  height: 20em;
+  border-radius: 1em;
+}
+
+.contactSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0077FF;
+}
+.contactSection .contactContainer {
+  width: 80%;
+  height: 20em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.contactSection .contactContainer .newsTitle {
+  color: #FFFFFF;
+  font-family: heading-font-family;
+  font-size: 2em;
+  text-align: start;
+  text-transform: uppercase;
+}
+.contactSection .contactContainer .newsletterForm {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.contactSection .contactContainer .newsletterForm .newsInput {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 30em;
+  padding: 1.125em 0;
+  background-color: #0077FF;
+  border: 0.125em solid #FFFFFF;
+  color: #FFFFFF;
+  border-radius: 0.625em 0 0 0.625em;
+  box-sizing: border-box;
+  outline: none;
+}
+.contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #FFFFFF;
+  padding-left: 1.3em;
+}
+.contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder:focus::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #FFFFFF;
+}
+.contactSection .contactContainer .newsletterForm .newsBtn {
+  font-family: body-font-family;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 1.25em 1.3em;
+  background-color: #FFFFFF;
+  color: #0077FF;
+  text-decoration: none;
+  border-radius: 0 0.625em 0.625em 0;
+  border: none;
+}
+.contactSection .contactContainer .followUs .followUsTitle {
+  color: #FFFFFF;
+  font-family: heading-font-family;
+  font-size: 2em;
+  text-align: end;
+  text-transform: uppercase;
+}
+.contactSection .contactContainer .followUs .followUsIcon {
+  display: flex;
+  gap: 2em;
+  padding-bottom: 2em;
+}
+.contactSection .contactContainer .followUs .followUsIcon svg {
+  width: 4em;
+  height: 4em;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footerContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footerContainer .footerLogo img {
+  width: 10em;
+  height: 5em;
+}
+footer .footerContainer .datenSchützLinks a {
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  font-family: heading-font-family;
+  font-size: 1em;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 1.063em;
+}
+footer .footerContainer .datenSchützLinks a:hover {
+  color: #0077FF;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  header .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 9%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(#000000, transparent);
+  }
+  .sidebar {
+    display: flex;
+  }
+  .sidebar .phoneIcon {
+    width: 10%;
+    height: 4%;
+    background-color: #0077FF;
+    position: fixed;
+    bottom: 0;
+    right: 3%;
+    margin-right: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .phoneIcon:hover {
+    width: 10%;
+    height: 6%;
+    background-color: #0077FF;
+    position: fixed;
+    bottom: 0%;
+    right: 3%;
+    transform: translateY(50%, 50%);
+    margin-right: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon {
+    width: 10%;
+    height: 4%;
+    background-color: #0077FF;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 4.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon:hover {
+    width: 10%;
+    height: 6%;
+    background-color: #0077FF;
+    position: fixed;
+    bottom: 0%;
+    right: 0;
+    transform: translateY(50%, 50%);
+    margin-right: 4.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .heroSection .picBox {
+    background-image: url("/assets/img/großglockner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 20em;
+    margin-bottom: 2em;
+  }
+  main .heroSection .heroInfo {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  main .heroSection .heroInfo h1 {
+    width: 15em;
+    color: #000000;
+    font-size: 1.5em;
+    font-family: heading-font-family;
+    padding-bottom: 0.8em;
+  }
+  main .heroSection .heroInfo .btnPrimary {
+    color: #FFFFFF;
+    border: none;
+    min-width: 1.25em;
+    text-decoration: none;
+    padding: 1em 1.4em;
+    font-family: body-font-family;
+    font-size: 1em;
+    background-color: #0077FF;
+    cursor: pointer;
+  }
+  main .mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .mainContainer .aboutSection {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 25em;
+    padding: 2em 0.4em;
+    margin-bottom: 2em;
+  }
+  main .mainContainer .aboutSection .quoteIcon svg {
+    width: 2em;
+    height: 2em;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle {
+    font-family: body-font-family;
+    text-align: start;
+    font-size: 0.9;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutParagraph {
+    text-align: start;
+    overflow: hidden;
+    font-family: body-font-family;
+    font-size: 1em;
+    padding: 0 0.4em;
+  }
+  main .mainContainer .galerySection {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25;
+    height: 15em;
+    gap: 2em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture img {
+    width: 100%;
+    height: 15em;
+    border-radius: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture :hover {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+  main .mainContainer .wikiInfo {
+    width: 80%;
+    height: 45em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1em 0;
+  }
+  main .mainContainer .wikiInfo .wikiText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle {
+    font-family: heading-font-family;
+    font-size: heading-font-size;
+    margin: 0;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle > span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikiPara {
+    font-family: body-font-family;
+    font-size: body-font-size;
+    text-align: left;
+    padding: 1em 0;
+    margin: 0;
+  }
+  main .mainContainer .wikiInfo .wikiPic {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiIcon {
+    width: 4em;
+    height: 4em;
+    position: relative;
+    bottom: -70%;
+    left: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #0077FF;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiImg img {
+    width: 24.149em;
+    height: 15em;
+    border-radius: 1em;
+  }
+  .contactSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0077FF;
+    margin-bottom: 2em;
+  }
+  .contactSection .contactContainer {
+    width: 80%;
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactSection .contactContainer .newsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 1em;
+    text-align: start;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .newsletterForm {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-bottom: 2em;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 11em;
+    padding: 0.625em 0;
+    background-color: #0077FF;
+    border: 0.125em solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 0.625em 0 0 0.625em;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+    padding-left: 1.3em;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder:focus::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+  }
+  .contactSection .contactContainer .newsletterForm .newsBtn {
+    font-family: body-font-family;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0.75em 1em;
+    background-color: #FFFFFF;
+    color: #0077FF;
+    text-decoration: none;
+    border-radius: 0 0.625em 0.625em 0;
+    border: none;
+  }
+  .contactSection .contactContainer .followUs .followUsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon {
+    display: flex;
+    gap: 0.625em;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon svg {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footerContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footerContainer .footerLogo img {
+    width: 10em;
+    height: 5em;
+  }
+  footer .footerContainer .datenSchützLinks {
+    display: flex;
+  }
+  footer .footerContainer .datenSchützLinks a {
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: heading-font-family;
+    font-size: 1em;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  footer .footerContainer .datenSchützLinks a:hover {
+    color: #0077FF;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  header .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 9%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(#000000, transparent);
+  }
+  .sidebar {
+    display: flex;
+  }
+  .sidebar .phoneIcon {
+    width: 8%;
+    height: 4%;
+    background-color: #0077FF;
+    position: fixed;
+    bottom: 0;
+    right: 3%;
+    margin-right: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .phoneIcon:hover {
+    width: 8%;
+    height: 6%;
+    background-color: #0077FF;
+    position: fixed;
+    bottom: 0%;
+    right: 0;
+    transform: translateY(100%, 160%);
+    margin-right: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon {
+    width: 8%;
+    height: 4%;
+    background-color: #0077FF;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon:hover {
+    width: 8%;
+    height: 6%;
+    background-color: #0077FF;
+    position: fixed;
+    bottom: 0%;
+    right: 0;
+    transform: translateY(50%, 50%);
+    margin-right: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .heroSection .picBox {
+    background-image: url("/assets/img/großglockner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 20em;
+    margin-bottom: 2em;
+  }
+  main .heroSection .heroInfo {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  main .heroSection .heroInfo h1 {
+    width: 15em;
+    color: #000000;
+    font-size: 1.5em;
+    font-family: heading-font-family;
+    padding-bottom: 0.8em;
+  }
+  main .heroSection .heroInfo .btnPrimary {
+    color: #FFFFFF;
+    border: none;
+    min-width: 1.25em;
+    text-decoration: none;
+    padding: 1em 1.4em;
+    font-family: body-font-family;
+    font-size: heading-font-size;
+    background-color: #0077FF;
+    cursor: pointer;
+  }
+  main .mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .mainContainer .aboutSection {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 25em;
+    padding: 2em 0.4em;
+    margin-bottom: 2em;
+  }
+  main .mainContainer .aboutSection .quoteIcon svg {
+    width: 2em;
+    height: 2em;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle {
+    font-family: body-font-family;
+    text-align: start;
+    font-family: 0.9;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutParagraph {
+    text-align: start;
+    overflow: hidden;
+    font-family: body-font-family;
+    font-size: 1em;
+    padding: 0 0.4em;
+  }
+  main .mainContainer .galerySection {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25;
+    height: 15em;
+    gap: 2em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture img {
+    width: 100%;
+    height: 15em;
+    border-radius: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture :hover {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+  main .mainContainer .wikiInfo {
+    width: 80%;
+    height: 45em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1em 0;
+  }
+  main .mainContainer .wikiInfo .wikiText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle {
+    font-family: heading-font-family;
+    font-size: 1em;
+    margin: 0;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle > span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikiPara {
+    font-family: body-font-family;
+    font-size: 1em;
+    text-align: left;
+    padding: 1em 0;
+    margin: 0;
+  }
+  main .mainContainer .wikiInfo .wikiPic {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiIcon {
+    width: 4em;
+    height: 4em;
+    position: relative;
+    bottom: -70%;
+    left: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #0077FF;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiImg img {
+    width: 30.099em;
+    height: 15em;
+    border-radius: 1em;
+  }
+  .contactSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0077FF;
+    margin-bottom: 2em;
+  }
+  .contactSection .contactContainer {
+    width: 80%;
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactSection .contactContainer .newsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 1em;
+    text-align: start;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .newsletterForm {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-bottom: 2em;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 11em;
+    padding: 0.625em 0;
+    background-color: #0077FF;
+    border: 0.125em solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 0.625em 0 0 0.625em;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+    padding-left: 1.3em;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder:focus::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+  }
+  .contactSection .contactContainer .newsletterForm .newsBtn {
+    font-family: body-font-family;
+    font-size: body-font-size;
+    cursor: pointer;
+    padding: 0.75em 1em;
+    background-color: #FFFFFF;
+    color: #0077FF;
+    text-decoration: none;
+    border-radius: 0 0.625em 0.625em 0;
+    border: none;
+  }
+  .contactSection .contactContainer .followUs .followUsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon {
+    display: flex;
+    gap: 0.625em;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon svg {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footerContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footerContainer .footerLogo img {
+    width: 10em;
+    height: 5em;
+  }
+  footer .footerContainer .datenSchützLinks {
+    display: flex;
+  }
+  footer .footerContainer .datenSchützLinks a {
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: heading-font-family;
+    font-size: 1em;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  footer .footerContainer .datenSchützLinks a:hover {
+    color: #0077FF;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  header .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 9%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    background-image: linear-gradient(#000000, transparent);
+  }
+  .sidebar .phoneIcon {
+    width: 5%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 25%;
+    left: 98.5%;
+    transform: translate(-50%, -50%);
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .sidebar .phoneIcon:hover {
+    width: 8%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 27.5%;
+    left: 98%;
+    transform: translate(-50%, -100%);
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon {
+    width: 5%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 30.5%;
+    left: 98.5%;
+    transform: translate(-50%, -50%);
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon:hover {
+    width: 8%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 31%;
+    left: 100%;
+    transform: translate(-90%, -60%);
+    line-height: 1;
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .heroSection .picBox {
+    background-image: url("/assets/img/großglockner.jpg");
+    background-size: 140%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 20em;
+    margin-bottom: 2em;
+  }
+  main .heroSection .heroInfo {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  main .heroSection .heroInfo h1 {
+    width: 15em;
+    color: #000000;
+    font-size: 2em;
+    font-family: heading-font-family;
+    font-weight: 800;
+    padding-bottom: 0.8em;
+  }
+  main .heroSection .heroInfo .btnPrimary {
+    color: #FFFFFF;
+    border: none;
+    min-width: 1.25em;
+    text-decoration: none;
+    padding: 1em 1.4em;
+    font-family: body-font-family;
+    font-size: 1em;
+    background-color: #0077FF;
+    cursor: pointer;
+  }
+  main .mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .mainContainer .aboutSection {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 18em;
+    padding: 2em 0.4em;
+    margin-bottom: 2em;
+  }
+  main .mainContainer .aboutSection .quoteIcon svg {
+    width: 2em;
+    height: 2em;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle {
+    font-family: body-font-family;
+    text-align: center;
+    font-family: 0.9;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutParagraph {
+    text-align: center;
+    overflow: hidden;
+    font-family: body-font-family;
+    font-size: 1em;
+    padding: 0 0.4em;
+  }
+  main .mainContainer .galerySection {
+    width: 80%;
+    display: flex;
+    gap: 0.5em;
+  }
+  main .mainContainer .galerySection .galeryRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25em;
+    height: 12.5em;
+    gap: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture img {
+    width: 100%;
+    height: 12.5em;
+    border-radius: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture :hover {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+  main .mainContainer .wikiInfo {
+    width: 80%;
+    height: 45em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1em 0;
+  }
+  main .mainContainer .wikiInfo .wikiText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle {
+    font-family: heading-font-family;
+    font-size: 1em;
+    margin: 0;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle > span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikiPara {
+    font-family: body-font-family;
+    font-size: 1em;
+    text-align: left;
+    padding: 1em 0;
+    margin: 0;
+  }
+  main .mainContainer .wikiInfo .wikiPic {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiIcon {
+    width: 4em;
+    height: 4em;
+    position: relative;
+    bottom: -70%;
+    left: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #0077FF;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiImg img {
+    width: 37.599em;
+    height: 18em;
+    border-radius: 1em;
+  }
+  .contactSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0077FF;
+    margin-bottom: 2em;
+  }
+  .contactSection .contactContainer {
+    width: 80%;
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactSection .contactContainer .newsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 1em;
+    text-align: start;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .newsletterForm {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-bottom: 2em;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 11em;
+    padding: 0.625em 0;
+    background-color: #0077FF;
+    border: 0.125em solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 0.625em 0 0 0.625em;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+    padding-left: 1.3em;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder:focus::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+  }
+  .contactSection .contactContainer .newsletterForm .newsBtn {
+    font-family: body-font-family;
+    font-size: body-font-size;
+    cursor: pointer;
+    padding: 0.75em 1em;
+    background-color: #FFFFFF;
+    color: #0077FF;
+    text-decoration: none;
+    border-radius: 0 0.625em 0.625em 0;
+    border: none;
+  }
+  .contactSection .contactContainer .followUs .followUsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon {
+    display: flex;
+    gap: 0.625em;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon svg {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footerContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footerContainer .footerLogo img {
+    width: 10em;
+    height: 5em;
+  }
+  footer .footerContainer .datenSchützLinks {
+    display: flex;
+  }
+  footer .footerContainer .datenSchützLinks a {
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: heading-font-family;
+    font-size: 1em;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  footer .footerContainer .datenSchützLinks a:hover {
+    color: #0077FF;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .sidebar .phoneIcon {
+    width: 3%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 25%;
+    left: 98.5%;
+    transform: translate(-50%, -50%);
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .sidebar .phoneIcon:hover {
+    width: 5%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 27.5%;
+    left: 98%;
+    transform: translate(-50%, -100%);
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon {
+    width: 3%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 30.5%;
+    left: 98.5%;
+    transform: translate(-50%, -50%);
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon:hover {
+    width: 5%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 31%;
+    left: 100%;
+    transform: translate(-90%, -60%);
+    line-height: 1;
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  main .heroSection .picBox {
+    background-image: url("/assets/img/großglockner.jpg");
+    background-size: 180%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 30em;
+    margin: 0;
+  }
+  main .heroSection .heroInfo {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  main .heroSection .heroInfo h1 {
+    color: #000000;
+    font-size: 2em;
+    font-family: heading-font-family;
+    padding-bottom: 0.8em;
+  }
+  main .heroSection .heroInfo .btnPrimary {
+    color: #FFFFFF;
+    border: none;
+    min-width: 1.25em;
+    text-decoration: none;
+    padding: 1em 1.4em;
+    font-family: body-font-family;
+    font-size: 1em;
+    background-color: #0077FF;
+    cursor: pointer;
+  }
+  main .mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .mainContainer .aboutSection {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25em;
+    margin: 0;
+    padding: 0;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle {
+    text-align: center;
+    font-family: heading-font-family;
+    font-weight: 800;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutParagraph {
+    text-align: center;
+    font-family: body-font-family;
+    font-size: 1em;
+    padding: 0 2em;
+  }
+  main .mainContainer .galerySection {
+    width: 80%;
+    display: flex;
+    gap: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25em;
+    height: 15em;
+    gap: 2em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture img {
+    width: 100%;
+    height: 15em;
+    border-radius: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture :hover {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+  main .mainContainer .wikiInfo {
+    width: 80%;
+    height: 25em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3em 0;
+  }
+  main .mainContainer .wikiInfo .wikiText {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 22em;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle {
+    font-family: heading-font-family;
+    font-size: 1em;
+    margin: 0;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle > span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikiPara {
+    font-family: body-font-family;
+    font-size: 1em;
+    text-align: left;
+    padding: 2em 0;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  main .mainContainer .wikiInfo .wikiPic {
+    display: flex;
+    flex-direction: row;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiIcon {
+    width: 4em;
+    height: 4em;
+    position: relative;
+    top: 0;
+    left: 8%;
+    border-radius: 50%;
+    background-color: #0077FF;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiImg {
+    margin-top: 2em;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiImg img {
+    width: 25em;
+    height: 20em;
+    border-radius: 1em;
+  }
+  .contactSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0077FF;
+  }
+  .contactSection .contactContainer {
+    width: 80%;
+    height: 20em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contactSection .contactContainer .newsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 2em;
+    text-align: start;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .newsletterForm {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 30em;
+    padding: 1.125em 0;
+    background-color: #0077FF;
+    border: 0.125em solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 0.625em 0 0 0.625em;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+    padding-left: 1.3em;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder:focus::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+  }
+  .contactSection .contactContainer .newsletterForm .newsBtn {
+    font-family: body-font-family;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 1.25em 1.3em;
+    background-color: #FFFFFF;
+    color: #0077FF;
+    text-decoration: none;
+    border-radius: 0 0.625em 0.625em 0;
+    border: none;
+  }
+  .contactSection .contactContainer .followUs .followUsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 2em;
+    text-align: end;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon {
+    display: flex;
+    gap: 2em;
+    padding-bottom: 2em;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon svg {
+    width: 4em;
+    height: 4em;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footerContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .footerContainer .footerLogo img {
+    width: 10em;
+    height: 5em;
+  }
+  footer .footerContainer .datenSchützLinks a {
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: heading-font-family;
+    font-size: 1em;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.063em;
+  }
+  footer .footerContainer .datenSchützLinks a:hover {
+    color: #0077FF;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .sidebar .phoneIcon {
+    width: 3%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 25%;
+    left: 98.5%;
+    transform: translate(-50%, -50%);
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .sidebar .phoneIcon:hover {
+    width: 5%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 27.5%;
+    left: 98%;
+    transform: translate(-50%, -100%);
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon {
+    width: 3%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 30.5%;
+    left: 98.5%;
+    transform: translate(-50%, -50%);
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar .mailIcon:hover {
+    width: 5%;
+    height: 5%;
+    z-index: 1;
+    position: fixed;
+    top: 31%;
+    left: 100%;
+    transform: translate(-90%, -60%);
+    line-height: 1;
+    background-color: #0077FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  main .heroSection .picBox {
+    background-image: url("/assets/img/großglockner.jpg");
+    background-size: 140%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 30em;
+  }
+  main .heroSection .heroInfo {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  main .heroSection .heroInfo h1 {
+    color: #000000;
+    font-size: 2em;
+    font-family: heading-font-family;
+    padding-bottom: 0.8em;
+  }
+  main .mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .mainContainer .aboutSection {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25em;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle {
+    text-align: center;
+    font-family: heading-font-family;
+    font-weight: 800;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutTitle span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .aboutSection .aboutInfo .aboutParagraph {
+    text-align: center;
+    font-family: body-font-family;
+    font-size: 1em;
+    padding: 0 10em;
+  }
+  main .mainContainer .galerySection {
+    width: 80%;
+    display: flex;
+    gap: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25em;
+    height: 15em;
+    gap: 2em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture img {
+    width: 100%;
+    height: 15em;
+    border-radius: 1em;
+  }
+  main .mainContainer .galerySection .galeryRow .picture :hover {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+  main .mainContainer .wikiInfo {
+    width: 80%;
+    height: 25em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3em 0;
+  }
+  main .mainContainer .wikiInfo .wikiText {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle {
+    font-family: heading-font-family;
+    font-size: 1em;
+    margin: 0;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikititle > span {
+    text-transform: uppercase;
+  }
+  main .mainContainer .wikiInfo .wikiText .wikiPara {
+    font-family: body-font-family;
+    font-size: 1em;
+    text-align: left;
+    padding: 2em 0;
+    margin: 0;
+  }
+  main .mainContainer .wikiInfo .wikiPic {
+    display: flex;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiIcon {
+    width: 4em;
+    height: 4em;
+    position: relative;
+    top: 0;
+    left: 5%;
+    border-radius: 50%;
+    background-color: #0077FF;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiImg {
+    margin-top: 2em;
+  }
+  main .mainContainer .wikiInfo .wikiPic .wikiImg img {
+    width: 30em;
+    height: 20em;
+    border-radius: 1em;
+  }
+  .contactSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0077FF;
+  }
+  .contactSection .contactContainer {
+    width: 80%;
+    height: 20em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contactSection .contactContainer .newsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 2em;
+    text-align: start;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .newsletterForm {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 30em;
+    padding: 1.125em 0;
+    background-color: #0077FF;
+    border: 0.125em solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 0.625em 0 0 0.625em;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+    padding-left: 1.3em;
+  }
+  .contactSection .contactContainer .newsletterForm .newsInput::-webkit-input-placeholder:focus::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFFFFF;
+  }
+  .contactSection .contactContainer .newsletterForm .newsBtn {
+    font-family: body-font-family;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 1.25em 1.3em;
+    background-color: #FFFFFF;
+    color: #0077FF;
+    text-decoration: none;
+    border-radius: 0 0.625em 0.625em 0;
+    border: none;
+  }
+  .contactSection .contactContainer .followUs .followUsTitle {
+    color: #FFFFFF;
+    font-family: heading-font-family;
+    font-size: 2em;
+    text-align: end;
+    text-transform: uppercase;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon {
+    display: flex;
+    gap: 2em;
+    padding-bottom: 2em;
+  }
+  .contactSection .contactContainer .followUs .followUsIcon svg {
+    width: 4em;
+    height: 4em;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footerContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .footerContainer .footerLogo img {
+    width: 10em;
+    height: 5em;
+  }
+  footer .footerContainer .datenSchützLinks a {
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: heading-font-family;
+    font-size: 1em;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.063em;
+  }
+  footer .footerContainer .datenSchützLinks a:hover {
+    color: #0077FF;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

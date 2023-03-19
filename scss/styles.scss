@@ -1,0 +1,2593 @@
+@import "variables";
+@import "mixins";
+@import "animations";
+
+@import "globals";
+
+// Sidebar
+.sidebar {
+    
+    .phoneIcon { // Desktop -V
+        width: 3%;
+        height: 5%;
+        z-index: 1;
+        position: fixed;
+        top: 25%;
+        left: 98.5%;
+        transform: translate(-50%, -50%);
+        background-color: $lightBlue;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+            width: 5%;
+            height: 5%;
+            z-index: 1;
+            position: fixed;
+            top: 27.5%;
+            left: 98%;
+            transform: translate(-50%, -100%);
+            background-color: $lightBlue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+
+    .mailIcon { // Desktop -V
+        width: 3%;
+        height: 5%;
+        z-index: 1;
+        position: fixed;
+        top: 30.5%;
+        left: 98.5%;
+        transform: translate(-50%, -50%);
+        background-color: $lightBlue;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            width: 5%;
+            height: 5%;
+            z-index: 1;
+            position: fixed;
+            top: 31%;
+            left: 100%;
+            transform: translate(-90%, -60%);
+            line-height: 1;
+            background-color: $lightBlue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            
+        }
+    }
+}
+
+// Navbar
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: $white;
+
+    .headerMenu {
+        background: $white;
+        padding: 0.625rem;
+        position: absolute;
+        width: calc(90% - 3em);
+        top: 9%;
+        left: 50%;
+        transform: translateX(-60%);
+        border-radius: 0.313em;
+        margin: 6em 2em;
+        z-index: 3;
+        
+
+        a {
+            display: block;
+            font-family: heading-font-family;
+            color: $black;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.063em;
+            padding: 0.625em;
+        }
+
+        a:hover {
+            color: $lightBlue;
+        }
+    }
+
+    &.open {
+
+        .navToggle {
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+
+            > span:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .overlay {
+        opacity: 0;
+        position: fixed;
+        top: 5%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient($black, transparent);
+
+        &.fade-in {
+            display: block;
+        }
+
+        &.fade-out {
+            display: none;
+        }
+    }
+
+    .navbar {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: body-font-family;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    
+
+        .navbarLogo {
+            width: 6em;
+            height: 3em;
+        }
+
+        .navbarRight {
+            color: $black;
+
+            > a {
+                font-family: heading-font-family;
+                font-weight: 800;
+                color: $black;
+                text-align: center;
+                text-decoration: none;
+                font-size: 1.063em;
+                padding: 1em 0.875em;
+            }
+
+            a:hover {
+                color: $lightBlue;
+            }
+        }
+
+        .navToggle { // mobile -V
+
+            > span {
+                display: block;
+                width: 1.6em;
+                height: 0.1em;
+                background-color: $black;
+                transition: all 300ms ease-in-out;
+                transform-origin: left center;
+
+                &:not(:last-child) {
+                    margin-bottom: 0.460em;
+                }
+            }
+
+        }
+    }
+
+    
+}
+
+// ------------------------------------------------------
+main {
+
+    // Hero Section
+    .heroSection {
+        
+        .picBox {
+            background-image: url('/assets/img/großglockner.jpg');
+            background-size: 140%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 30em;
+        }
+        
+        .heroInfo {
+            position: absolute;
+            text-align: center;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+    
+            h1 {
+                color: $black;
+                font-size: 2em;
+                font-family: heading-font-family;
+                padding-bottom: 0.8em;
+            }
+        }
+
+        
+    
+    }
+
+    .mainContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        // About Section
+    
+        .aboutSection {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 25em;
+        
+            .aboutInfo {
+                .aboutTitle {
+                    text-align: center;
+                    font-family: heading-font-family;
+                    font-weight: 800;
+        
+                    span {
+                        text-transform: uppercase;
+                    }
+                }
+        
+                .aboutParagraph {
+                    text-align: center;
+                    font-family: body-font-family;
+                    font-size: $body-font-size;
+                    padding: 0 10em;
+                }
+            }
+        }
+        
+        // ------------------------------------------------------------------
+        
+        // Galery Section  
+        
+        .galerySection {
+            width: 80%;
+            display: flex;
+            gap: 1em;
+            
+            .galeryRow {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                gap: 1em;
+        
+                .picture {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 25em;
+                    height: 15em;
+                    gap: 2em;
+        
+                    img {
+                        width:100%;
+                        height: 15em;
+                        border-radius: 1em;
+                    }
+        
+                    :hover {
+                        transition: transform .5s ease-in-out;
+                        transform: scale(1.1); 
+                    }
+                }
+            }
+        }
+
+        // -------------------------------------------------------------
+        
+        // Wiki Section
+        
+        .wikiInfo {
+            width: 80%;
+            height: 25em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3em 0;
+        
+            .wikiText {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+        
+                .wikititle {
+                    font-family: heading-font-family;
+                    font-size: $heading-font-size;
+                    margin: 0;
+        
+                    > span {
+                        text-transform: uppercase;
+                    }
+                }
+        
+                .wikiPara {
+                    font-family: body-font-family;
+                    font-size: $body-font-size;
+                    text-align: left;
+                    padding: 2em 0;
+                    margin: 0;
+                }
+            }
+        
+            .wikiPic {
+                display: flex;
+        
+                .wikiIcon {
+                    width: 4em;
+                    height: 4em;
+                    position: relative;
+                    top: 0;
+                    left: 5%;
+                    border-radius: 50%;
+                    background-color: $lightBlue;
+        
+                }
+        
+                .wikiImg {
+                    margin-top: 2em;
+                    img {
+                        width: 30em;
+                        height: 20em;
+                        border-radius: 1em;
+                    }
+                }
+            }
+        }
+        
+        // --------------------------------------------------------------------------    
+    }
+    
+}
+
+//  Contact Section
+
+.contactSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $lightBlue;
+
+    .contactContainer {
+        width: 80%;
+        height: 20em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+
+        .newsTitle {
+            color: $white;
+            font-family: heading-font-family;
+            font-size: 2em;
+            text-align: start;
+            text-transform: uppercase;
+        }
+
+        .newsletterForm {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+
+
+            .newsInput {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                width: 30em;
+                padding: 1.125em 0;
+                background-color: $lightBlue;
+                border: 0.125em solid $white;
+                color: $white;
+                border-radius: 0.625em 0 0 0.625em;
+                box-sizing: border-box;
+                outline: none;
+
+                &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                    color: $white;
+                    padding-left: 1.3em;
+                    &:focus{
+                    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                        color: $white;
+                    }
+                    }
+                }
+            }
+
+            .newsBtn {
+                font-family: body-font-family;
+                font-size: $body-font-size;
+                cursor: pointer;
+                padding: 1.250em 1.3em;
+                background-color: $white;
+                color: $lightBlue;
+                text-decoration: none;
+                border-radius: 0 0.625em 0.625em 0;
+                border: none;
+            }
+        }
+
+        .followUs {
+
+
+            .followUsTitle {
+                color: $white;
+                font-family: heading-font-family;
+                font-size: 2em;
+                text-align: end;
+                text-transform: uppercase;
+            }
+
+            .followUsIcon {
+                display: flex;
+                gap: 2em;
+                padding-bottom: 2em;
+
+                svg {
+                    width: 4em;
+                    height: 4em;
+                }
+            }
+        }
+    }
+    
+}
+
+// Footer
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .footerContainer {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .footerLogo {
+
+            img {
+                width: 10em;
+                height: 5em;
+            }
+        }
+
+        .datenSchützLinks {
+
+            a {
+                color: $black;
+                text-align: center;
+                padding: 14px 16px;
+                font-family: heading-font-family;
+                font-size: $heading-font-size;
+                font-weight: 800;
+                text-decoration: none;
+                font-size: 1.063em;
+            }
+
+            a:hover {
+                color: $lightBlue;
+            }
+        }
+    }
+}
+
+// ----------------------------------------------------------------------
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    header {
+        .overlay {
+            opacity: 0;
+            position: fixed;
+            top: 9%;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient($black, transparent);
+        }   
+    }
+    // Sidebar
+    .sidebar {
+        display: flex;
+
+        .phoneIcon { // Mobile -V
+            width: 10%;
+            height: 4%;
+            background-color: $lightBlue;
+            position: fixed;
+            bottom: 0;
+            right: 3%;
+            margin-right: 1em;
+            
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                width: 10%;
+                height: 6%;
+                background-color: $lightBlue;
+                position: fixed;
+                bottom: 0%;
+                right: 3%;
+                transform: translateY(50%, 50%);
+                margin-right: 1em;
+                
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        } 
+
+        .mailIcon { // Mobile -V
+            width: 10%;
+            height: 4%;
+            background-color: $lightBlue;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-right: 4.5em;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                width: 10%;
+                height: 6%;
+                background-color: $lightBlue;
+                position: fixed;
+                bottom: 0%;
+                right: 0;
+                transform: translateY(50%, 50%);
+                margin-right: 4.5em;
+                
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }  
+    }
+
+    main {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        // Hero Section
+        .heroSection {
+            
+            .picBox {
+                background-image: url('/assets/img/großglockner.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                height: 20em;
+                margin-bottom: 2em;
+            }
+            
+            .heroInfo {
+                position: absolute;
+                text-align: center;
+                top: 25%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+        
+                h1 {
+                    width: 15em;
+                    color: $black;
+                    font-size: 1.5em;
+                    font-family: heading-font-family;
+                    padding-bottom: 0.8em;
+                }
+
+                .btnPrimary {
+                    color: $white;
+                    border: none;
+                    min-width: 1.250em;
+                    text-decoration: none;
+                    padding: 1em 1.4em;
+                    font-family: body-font-family;
+                    font-size: $heading-font-size;
+                    background-color: $lightBlue;
+                    cursor: pointer;
+                }
+            }
+    
+            
+        
+        }
+
+        .mainContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+        // About Section
+    
+        .aboutSection {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            height: 25em;
+            padding: 2em 0.4em;
+            margin-bottom: 2em;
+
+            .quoteIcon{
+                svg {
+                    width: 2em;
+                    height: 2em;
+                    
+                }
+            }
+        
+            .aboutInfo {
+                .aboutTitle {
+                    font-family: body-font-family;
+                    text-align: start;
+                    font-size: 0.9;
+        
+                    span {
+                        text-transform: uppercase;
+                    }
+                }
+        
+                .aboutParagraph {
+                    text-align: start;
+                    overflow: hidden;
+                    font-family: body-font-family;
+                    font-size: $body-font-size;
+                    padding: 0 0.4em;
+                }
+            }
+        }
+        
+        // ------------------------------------------------------------------
+        
+        // Galery Section  
+        
+        .galerySection {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            
+            .galeryRow {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+        
+                .picture {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 25;
+                    height: 15em;
+                    gap: 2em;
+        
+                    img {
+                        width:100%;
+                        height: 15em;
+                        border-radius: 1em;
+                    }
+        
+                    :hover {
+                        transition: transform .5s ease-in-out;
+                        transform: scale(1.1); 
+                    }
+                }
+            }
+        }
+        // -------------------------------------------------------------
+        
+        // Wiki Section
+        
+        .wikiInfo {
+            width: 80%;
+            height: 45em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            padding: 1em 0;
+        
+            .wikiText {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                
+        
+                .wikititle {
+                    font-family: heading-font-family;
+                    font-size: heading-font-size;
+                    margin: 0;
+        
+                    > span {
+                        text-transform: uppercase;
+                    }
+                }
+        
+                .wikiPara {
+                    font-family: body-font-family;
+                    font-size: body-font-size;
+                    text-align: left;
+                    padding: 1em 0;
+                    margin: 0;
+                }
+            }
+        
+            .wikiPic {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: start;
+        
+                .wikiIcon {
+                    width: 4em;
+                    height: 4em;
+                    position: relative;
+                    bottom: -70%;
+                    left: 6%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    background-color: $lightBlue;
+        
+                }
+        
+                .wikiImg {
+                    img {
+                        width: 24.149em;
+                        height: 15.000em;
+                        border-radius: 1em;
+                    }
+                }
+            }
+        }
+        // --------------------------------------------------------------------------
+        }
+        
+        // --------------------------------------------------------------------------
+    }
+
+    .contactSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $lightBlue;
+        margin-bottom: 2em;
+    
+        .contactContainer {
+            width: 80%;
+            height: 20em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+    
+            .newsTitle {
+                color: $white;
+                font-family: heading-font-family;
+                font-size: 1em;
+                text-align: start;
+                text-transform: uppercase;
+            }
+    
+            .newsletterForm {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                padding-bottom: 2em;
+    
+    
+                .newsInput {
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    width: 11em;
+                    padding: 0.625em 0;
+                    background-color: $lightBlue;
+                    border: 0.125em solid $white;
+                    color: $white;
+                    border-radius: 0.625em 0 0 0.625em;
+                    box-sizing: border-box;
+                    outline: none;
+    
+                    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                        color: $white;
+                        padding-left: 1.3em;
+                        &:focus{
+                        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                            color: $white;
+                        }
+                        }
+                    }
+                }
+    
+                .newsBtn {
+                    font-family: body-font-family;
+                    font-size: $body-font-size;
+                    cursor: pointer;
+                    padding: 0.750em 1em;
+                    background-color: $white;
+                    color: $lightBlue;
+                    text-decoration: none;
+                    border-radius: 0 0.625em 0.625em 0;
+                    border: none;
+                }
+            }
+    
+            .followUs {
+    
+    
+                .followUsTitle {
+                    color: $white;
+                    font-family: heading-font-family;
+                    font-size: 1em;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+    
+                .followUsIcon {
+                    display: flex;
+                    gap: 0.625em;
+
+                    svg {
+                        width: 2.5em;
+                        height: 2.5em;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    // Footer
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .footerContainer {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .footerLogo {
+
+                img {
+                    width: 10em;
+                    height: 5em;
+                }
+            }
+
+            .datenSchützLinks {
+                display: flex;
+
+                a {
+                    color: $black;
+                    text-align: center;
+                    padding: 14px 16px;
+                    font-family: heading-font-family;
+                    font-size: $heading-font-size;
+                    font-weight: 800;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                a:hover {
+                    color: $lightBlue;
+                }
+            }
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    header {
+        .overlay {
+            opacity: 0;
+            position: fixed;
+            top: 9%;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient($black, transparent);
+        }   
+    }
+
+    // Sidebar
+    .sidebar {
+        display: flex;
+
+        .phoneIcon { // Mobile -V
+            width: 8%;
+            height: 4%;
+            background-color: $lightBlue;
+            position: fixed;
+            bottom: 0;
+            right: 3%;
+            margin-right: 1em;
+            
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                width: 8%;
+                height: 6%;
+                background-color: $lightBlue;
+                position: fixed;
+                bottom: 0%;
+                right: 0;
+                transform: translateY(100%, 160%);
+                margin-right: 1em;
+                
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        } 
+
+        .mailIcon { // Mobile -V
+            width: 8%;
+            height: 4%;
+            background-color: $lightBlue;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-right: 6em;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                width: 8%;
+                height: 6%;
+                background-color: $lightBlue;
+                position: fixed;
+                bottom: 0%;
+                right: 0;
+                transform: translateY(50%, 50%);
+                margin-right: 5em;
+                
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }  
+    }
+    
+    main {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        // Hero Section
+        .heroSection {
+            
+            .picBox {
+                background-image: url('/assets/img/großglockner.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                height: 20em;
+                margin-bottom: 2em;
+            }
+            
+            .heroInfo {
+                position: absolute;
+                text-align: center;
+                top: 25%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+        
+                h1 {
+                    width: 15em;
+                    color: $black;
+                    font-size: 1.5em;
+                    font-family: heading-font-family;
+                    padding-bottom: 0.8em;
+                }
+
+                .btnPrimary {
+                    color: $white;
+                    border: none;
+                    min-width: 1.250em;
+                    text-decoration: none;
+                    padding: 1em 1.4em;
+                    font-family: body-font-family;
+                    font-size: heading-font-size;
+                    background-color: $lightBlue;
+                    cursor: pointer;
+                }
+            }
+    
+            
+        
+        }
+
+        .mainContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+        // About Section
+    
+        .aboutSection {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            height: 25em;
+            padding: 2em 0.4em;
+            margin-bottom: 2em;
+
+            .quoteIcon{
+                svg {
+                    width: 2em;
+                    height: 2em;
+                    
+                }
+            }
+        
+            .aboutInfo {
+                .aboutTitle {
+                    font-family: body-font-family;
+                    text-align: start;
+                    font-family: 0.9;
+        
+                    span {
+                        text-transform: uppercase;
+                    }
+                }
+        
+                .aboutParagraph {
+                    text-align: start;
+                    overflow: hidden;
+                    font-family: body-font-family;
+                    font-size: $body-font-size;
+                    padding: 0 0.4em;
+                }
+            }
+        }
+        
+        // ------------------------------------------------------------------
+        
+        // Galery Section  
+        
+        .galerySection {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            
+            .galeryRow {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+        
+                .picture {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 25;
+                    height: 15em;
+                    gap: 2em;
+        
+                    img {
+                        width:100%;
+                        height: 15em;
+                        border-radius: 1em;
+                    }
+        
+                    :hover {
+                        transition: transform .5s ease-in-out;
+                        transform: scale(1.1); 
+                    }
+                }
+            }
+        }
+        // -------------------------------------------------------------
+        
+        // Wiki Section
+        
+        .wikiInfo {
+            width: 80%;
+            height: 45em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            padding: 1em 0;
+        
+            .wikiText {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                
+        
+                .wikititle {
+                    font-family: heading-font-family;
+                    font-size: $heading-font-size;
+                    margin: 0;
+        
+                    > span {
+                        text-transform: uppercase;
+                    }
+                }
+        
+                .wikiPara {
+                    font-family: body-font-family;
+                    font-size: $body-font-size;
+                    text-align: left;
+                    padding: 1em 0;
+                    margin: 0;
+                }
+            }
+        
+            .wikiPic {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: start;
+        
+                .wikiIcon {
+                    width: 4em;
+                    height: 4em;
+                    position: relative;
+                    bottom: -70%;
+                    left: 6%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    background-color: $lightBlue;
+        
+                }
+        
+                .wikiImg {
+                    img {
+                        width: 30.099em;
+                        height: 15.000em;
+                        border-radius: 1em;
+                    }
+                }
+            }
+        }
+        // --------------------------------------------------------------------------
+        }
+        
+        // --------------------------------------------------------------------------
+    }
+
+    .contactSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $lightBlue;
+        margin-bottom: 2em;
+    
+        .contactContainer {
+            width: 80%;
+            height: 20em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+    
+            .newsTitle {
+                color: $white;
+                font-family: heading-font-family;
+                font-size: 1em;
+                text-align: start;
+                text-transform: uppercase;
+            }
+    
+            .newsletterForm {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                padding-bottom: 2em;
+    
+    
+                .newsInput {
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    width: 11em;
+                    padding: 0.625em 0;
+                    background-color: $lightBlue;
+                    border: 0.125em solid $white;
+                    color: $white;
+                    border-radius: 0.625em 0 0 0.625em;
+                    box-sizing: border-box;
+                    outline: none;
+    
+                    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                        color: $white;
+                        padding-left: 1.3em;
+                        &:focus{
+                        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                            color: $white;
+                        }
+                        }
+                    }
+                }
+    
+                .newsBtn {
+                    font-family: body-font-family;
+                    font-size: body-font-size;
+                    cursor: pointer;
+                    padding: 0.750em 1em;
+                    background-color: $white;
+                    color: $lightBlue;
+                    text-decoration: none;
+                    border-radius: 0 0.625em 0.625em 0;
+                    border: none;
+                }
+            }
+    
+            .followUs {
+    
+    
+                .followUsTitle {
+                    color: $white;
+                    font-family: heading-font-family;
+                    font-size: 1em;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+    
+                .followUsIcon {
+                    display: flex;
+                    gap: 0.625em;
+
+                    svg {
+                        width: 2.5em;
+                        height: 2.5em;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    // Footer
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .footerContainer {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .footerLogo {
+
+                img {
+                    width: 10em;
+                    height: 5em;
+                }
+            }
+
+            .datenSchützLinks {
+                display: flex;
+
+                a {
+                    color: $black;
+                    text-align: center;
+                    padding: 14px 16px;
+                    font-family: heading-font-family;
+                    font-size: $heading-font-size;
+                    font-weight: 800;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                a:hover {
+                    color: $lightBlue;
+                }
+            }
+        }
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    header {
+        .overlay {
+            opacity: 0;
+            position: fixed;
+            top: 9%;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 3;
+            background-image: linear-gradient($black, transparent);
+        }   
+    }
+    // Sidebar
+    .sidebar {
+        
+        .phoneIcon { // Desktop -V
+            width: 5%;
+            height: 5%;
+            z-index: 1;
+            position: fixed;
+            top: 25%;
+            left: 98.5%;
+            transform: translate(-50%, -50%);
+            background-color: $lightBlue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                width: 8%;
+                height: 5%;
+                z-index: 1;
+                position: fixed;
+                top: 27.5%;
+                left: 98%;
+                transform: translate(-50%, -100%);
+                background-color: $lightBlue;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+
+        .mailIcon { // Desktop -V
+            width: 5%;
+            height: 5%;
+            z-index: 1;
+            position: fixed;
+            top: 30.5%;
+            left: 98.5%;
+            transform: translate(-50%, -50%);
+            background-color: $lightBlue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                width: 8%;
+                height: 5%;
+                z-index: 1;
+                position: fixed;
+                top: 31%;
+                left: 100%;
+                transform: translate(-90%, -60%);
+                line-height: 1;
+                background-color: $lightBlue;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                
+            }
+        }
+    }
+    
+    main {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        // Hero Section
+        .heroSection {
+            
+            .picBox {
+                background-image: url('/assets/img/großglockner.jpg');
+                background-size: 140%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                height: 20em;
+                margin-bottom: 2em;
+            }
+            
+            .heroInfo {
+                position: absolute;
+                text-align: center;
+                top: 25%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+        
+                h1 {
+                    width: 15em;
+                    color: $black;
+                    font-size: 2em;
+                    font-family: heading-font-family;
+                    font-weight: 800;
+                    padding-bottom: 0.8em;
+                }
+
+                .btnPrimary {
+                    color: $white;
+                    border: none;
+                    min-width: 1.250em;
+                    text-decoration: none;
+                    padding: 1em 1.4em;
+                    font-family: body-font-family;
+                    font-size: $heading-font-size;
+                    background-color: $lightBlue;
+                    cursor: pointer;
+                }
+            }
+    
+            
+        
+        }
+
+        .mainContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+            // About Section
+        
+            .aboutSection {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 18em;
+                padding: 2em 0.4em;
+                margin-bottom: 2em;
+
+                .quoteIcon{
+                    svg {
+                        width: 2em;
+                        height: 2em;
+                        
+                    }
+                }
+            
+                .aboutInfo {
+                    .aboutTitle {
+                        font-family: body-font-family;
+                        text-align: center;
+                        font-family: 0.9;
+            
+                        span {
+                            text-transform: uppercase;
+                        }
+                    }
+            
+                    .aboutParagraph {
+                        text-align: center;
+                        overflow: hidden;
+                        font-family: body-font-family;
+                        font-size: $body-font-size;
+                        padding: 0 0.4em;
+                    }
+                }
+            }
+        
+            // ------------------------------------------------------------------
+            
+            // Galery Section  
+            
+            .galerySection {
+                width: 80%;
+                display: flex;
+                gap: 0.5em;
+                
+                .galeryRow {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0.5em;
+            
+                    .picture {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 25em;
+                        height: 12.5em;
+                        gap: 1em;
+            
+                        img {
+                            width:100%;
+                            height: 12.5em;
+                            border-radius: 1em;
+                        }
+            
+                        :hover {
+                            transition: transform .5s ease-in-out;
+                            transform: scale(1.1); 
+                        }
+                    }
+                }
+            }
+            // -------------------------------------------------------------
+            
+            // Wiki Section
+            
+            .wikiInfo {
+                width: 80%;
+                height: 45em;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                padding: 1em 0;
+            
+                .wikiText {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    
+            
+                    .wikititle {
+                        font-family: heading-font-family;
+                        font-size: $heading-font-size;
+                        margin: 0;
+            
+                        > span {
+                            text-transform: uppercase;
+                        }
+                    }
+            
+                    .wikiPara {
+                        font-family: body-font-family;
+                        font-size: $body-font-size;
+                        text-align: left;
+                        padding: 1em 0;
+                        margin: 0;
+                    }
+                }
+            
+                .wikiPic {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: start;
+            
+                    .wikiIcon {
+                        width: 4em;
+                        height: 4em;
+                        position: relative;
+                        bottom: -70%;
+                        left: 6%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        background-color: $lightBlue;
+            
+                    }
+            
+                    .wikiImg {
+                        img {
+                            width: 37.599em;
+                            height: 18.000em;
+                            border-radius: 1em;
+                        }
+                    }
+                }
+            }
+            // --------------------------------------------------------------------------
+        }
+        
+        // --------------------------------------------------------------------------
+    }
+
+    .contactSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $lightBlue;
+        margin-bottom: 2em;
+    
+        .contactContainer {
+            width: 80%;
+            height: 20em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+    
+            .newsTitle {
+                color: $white;
+                font-family: heading-font-family;
+                font-size: 1em;
+                text-align: start;
+                text-transform: uppercase;
+            }
+    
+            .newsletterForm {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                padding-bottom: 2em;
+    
+    
+                .newsInput {
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    width: 11em;
+                    padding: 0.625em 0;
+                    background-color: $lightBlue;
+                    border: 0.125em solid $white;
+                    color: $white;
+                    border-radius: 0.625em 0 0 0.625em;
+                    box-sizing: border-box;
+                    outline: none;
+    
+                    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                        color: $white;
+                        padding-left: 1.3em;
+                        &:focus{
+                        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                            color: $white;
+                        }
+                        }
+                    }
+                }
+    
+                .newsBtn {
+                    font-family: body-font-family;
+                    font-size: body-font-size;
+                    cursor: pointer;
+                    padding: 0.750em 1em;
+                    background-color: $white;
+                    color: $lightBlue;
+                    text-decoration: none;
+                    border-radius: 0 0.625em 0.625em 0;
+                    border: none;
+                }
+            }
+    
+            .followUs {
+    
+    
+                .followUsTitle {
+                    color: $white;
+                    font-family: heading-font-family;
+                    font-size: 1em;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+    
+                .followUsIcon {
+                    display: flex;
+                    gap: 0.625em;
+
+                    svg {
+                        width: 2.5em;
+                        height: 2.5em;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    // Footer
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .footerContainer {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .footerLogo {
+
+                img {
+                    width: 10em;
+                    height: 5em;
+                }
+            }
+
+            .datenSchützLinks {
+                display: flex;
+
+                a {
+                    color: $black;
+                    text-align: center;
+                    padding: 14px 16px;
+                    font-family: heading-font-family;
+                    font-size: $heading-font-size;
+                    font-weight: 800;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                a:hover {
+                    color: $lightBlue;
+                }
+            }
+        }
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+     // Sidebar
+     .sidebar {
+    
+        .phoneIcon { // Desktop -V
+            width: 3%;
+            height: 5%;
+            z-index: 1;
+            position: fixed;
+            top: 25%;
+            left: 98.5%;
+            transform: translate(-50%, -50%);
+            background-color: $lightBlue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                width: 5%;
+                height: 5%;
+                z-index: 1;
+                position: fixed;
+                top: 27.5%;
+                left: 98%;
+                transform: translate(-50%, -100%);
+                background-color: $lightBlue;
+    
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+
+        .mailIcon { // Desktop -V
+            width: 3%;
+            height: 5%;
+            z-index: 1;
+            position: fixed;
+            top: 30.5%;
+            left: 98.5%;
+            transform: translate(-50%, -50%);
+            background-color: $lightBlue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                width: 5%;
+                height: 5%;
+                z-index: 1;
+                position: fixed;
+                top: 31%;
+                left: 100%;
+                transform: translate(-90%, -60%);
+                line-height: 1;
+                background-color: $lightBlue;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                
+            }
+        }
+    }
+
+    main {
+
+        // Hero Section
+        .heroSection {
+            
+
+            .picBox {
+                background-image: url('/assets/img/großglockner.jpg');
+                background-size: 180%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                height: 30em;
+                margin: 0;
+            }
+            
+            .heroInfo {
+                position: absolute;
+                text-align: center;
+                top: 25%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+        
+                h1 {
+                    color: $black;
+                    font-size: 2em;
+                    font-family: heading-font-family;
+                    padding-bottom: 0.8em;
+                }
+
+                .btnPrimary {
+                    color: $white;
+                    border: none;
+                    min-width: 1.250em;
+                    text-decoration: none;
+                    padding: 1em 1.4em;
+                    font-family: body-font-family;
+                    font-size: $heading-font-size;
+                    background-color: $lightBlue;
+                    cursor: pointer;
+                }
+            }
+    
+            
+        
+        }
+
+        .mainContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+            // About Section
+        
+            .aboutSection {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 25em;
+                margin: 0;
+                padding: 0;
+            
+                .aboutInfo {
+                    .aboutTitle {
+                        text-align: center;
+                        font-family: heading-font-family;
+                        font-weight: 800;
+            
+                        span {
+                            text-transform: uppercase;
+                        }
+                    }
+            
+                    .aboutParagraph {
+                        text-align: center;
+                        font-family: body-font-family;
+                        font-size: $body-font-size;
+                        padding: 0 2em;
+                    }
+                }
+            }
+            
+            // ------------------------------------------------------------------
+            
+            // Galery Section  
+            
+            .galerySection {
+                width: 80%;
+                display: flex;
+                gap: 1em;
+                
+                .galeryRow {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1em;
+            
+                    .picture {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 25em;
+                        height: 15em;
+                        gap: 2em;
+            
+                        img {
+                            width:100%;
+                            height: 15em;
+                            border-radius: 1em;
+                        }
+            
+                        :hover {
+                            transition: transform .5s ease-in-out;
+                            transform: scale(1.1); 
+                        }
+                    }
+                }
+            }
+
+            // -------------------------------------------------------------
+            
+            // Wiki Section
+            
+            .wikiInfo {
+                width: 80%;
+                height: 25em;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 3em 0;
+            
+                .wikiText {
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    height: 22em;
+            
+                    .wikititle {
+                        font-family: heading-font-family;
+                        font-size: $heading-font-size;
+                        margin: 0;
+            
+                        > span {
+                            text-transform: uppercase;
+                        }
+                    }
+            
+                    .wikiPara {
+                        font-family: body-font-family;
+                        font-size: $body-font-size;
+                        text-align: left;
+                        padding: 2em 0;
+                        margin: 0;
+                        
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            
+                .wikiPic {
+                    display: flex;
+                    flex-direction: row;
+            
+                    .wikiIcon {
+                        width: 4em;
+                        height: 4em;
+                        position: relative;
+                        top: 0;
+                        left: 8%;
+                        border-radius: 50%;
+                        background-color: $lightBlue;
+            
+                    }
+            
+                    .wikiImg {
+                        margin-top: 2em;
+                        img {
+                            width: 25em;
+                            height: 20em;
+                            border-radius: 1em;
+                        }
+                    }
+                }
+            }
+            
+            // -------------------------------------------------------------------------- 
+
+        }
+        
+    }
+
+        //  Contact Section
+
+        .contactSection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $lightBlue;
+    
+            .contactContainer {
+                width: 80%;
+                height: 20em;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                
+    
+                .newsTitle {
+                    color: $white;
+                    font-family: heading-font-family;
+                    font-size: 2em;
+                    text-align: start;
+                    text-transform: uppercase;
+                }
+    
+                .newsletterForm {
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+    
+    
+                    .newsInput {
+                        display: flex;
+                        justify-content: center;
+                        align-items: start;
+                        width: 30em;
+                        padding: 1.125em 0;
+                        background-color: $lightBlue;
+                        border: 0.125em solid $white;
+                        color: $white;
+                        border-radius: 0.625em 0 0 0.625em;
+                        box-sizing: border-box;
+                        outline: none;
+    
+                        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                            color: $white;
+                            padding-left: 1.3em;
+                            &:focus{
+                            &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                                color: $white;
+                            }
+                            }
+                        }
+                    }
+    
+                    .newsBtn {
+                        font-family: body-font-family;
+                        font-size: $body-font-size;
+                        cursor: pointer;
+                        padding: 1.250em 1.3em;
+                        background-color: $white;
+                        color: $lightBlue;
+                        text-decoration: none;
+                        border-radius: 0 0.625em 0.625em 0;
+                        border: none;
+                    }
+                }
+    
+                .followUs {
+    
+    
+                    .followUsTitle {
+                        color: $white;
+                        font-family: heading-font-family;
+                        font-size: 2em;
+                        text-align: end;
+                        text-transform: uppercase;
+                    }
+    
+                    .followUsIcon {
+                        display: flex;
+                        gap: 2em;
+                        padding-bottom: 2em;
+    
+                        svg {
+                            width: 4em;
+                            height: 4em;
+                        }
+                    }
+                }
+            }
+            
+        }
+    
+        // Footer
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .footerContainer {
+                width: 80%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+    
+                .footerLogo {
+    
+                    img {
+                        width: 10em;
+                        height: 5em;
+                    }
+                }
+    
+                .datenSchützLinks {
+    
+                    a {
+                        color: $black;
+                        text-align: center;
+                        padding: 14px 16px;
+                        font-family: heading-font-family;
+                        font-size: $heading-font-size;
+                        font-weight: 800;
+                        text-decoration: none;
+                        font-size: 1.063em;
+                    }
+    
+                    a:hover {
+                        color: $lightBlue;
+                    }
+                }
+            }
+        }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+     // Sidebar
+     .sidebar {
+    
+        .phoneIcon { // Desktop -V
+            width: 3%;
+            height: 5%;
+            z-index: 1;
+            position: fixed;
+            top: 25%;
+            left: 98.5%;
+            transform: translate(-50%, -50%);
+            background-color: $lightBlue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                width: 5%;
+                height: 5%;
+                z-index: 1;
+                position: fixed;
+                top: 27.5%;
+                left: 98%;
+                transform: translate(-50%, -100%);
+                background-color: $lightBlue;
+    
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+
+        .mailIcon { // Desktop -V
+            width: 3%;
+            height: 5%;
+            z-index: 1;
+            position: fixed;
+            top: 30.5%;
+            left: 98.5%;
+            transform: translate(-50%, -50%);
+            background-color: $lightBlue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                width: 5%;
+                height: 5%;
+                z-index: 1;
+                position: fixed;
+                top: 31%;
+                left: 100%;
+                transform: translate(-90%, -60%);
+                line-height: 1;
+                background-color: $lightBlue;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                
+            }
+        }
+    }
+    
+    main {
+
+        // Hero Section
+        .heroSection {
+            
+            .picBox {
+                background-image: url('/assets/img/großglockner.jpg');
+                background-size: 140%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                height: 30em;
+            }
+            
+            .heroInfo {
+                position: absolute;
+                text-align: center;
+                top: 25%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+        
+                h1 {
+                    color: $black;
+                    font-size: 2em;
+                    font-family: heading-font-family;
+                    padding-bottom: 0.8em;
+                }
+            }
+    
+            
+        
+        }
+
+        .mainContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+            // About Section
+        
+            .aboutSection {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 25em;
+            
+                .aboutInfo {
+                    .aboutTitle {
+                        text-align: center;
+                        font-family: heading-font-family;
+                        font-weight: 800;
+            
+                        span {
+                            text-transform: uppercase;
+                        }
+                    }
+            
+                    .aboutParagraph {
+                        text-align: center;
+                        font-family: body-font-family;
+                        font-size: $body-font-size;
+                        padding: 0 10em;
+                    }
+                }
+            }
+            
+            // ------------------------------------------------------------------
+            
+            // Galery Section  
+            
+            .galerySection {
+                width: 80%;
+                display: flex;
+                gap: 1em;
+                
+                .galeryRow {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1em;
+            
+                    .picture {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 25em;
+                        height: 15em;
+                        gap: 2em;
+            
+                        img {
+                            width:100%;
+                            height: 15em;
+                            border-radius: 1em;
+                        }
+            
+                        :hover {
+                            transition: transform .5s ease-in-out;
+                            transform: scale(1.1); 
+                        }
+                    }
+                }
+            }
+
+            // -------------------------------------------------------------
+            
+            // Wiki Section
+            
+            .wikiInfo {
+                width: 80%;
+                height: 25em;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 3em 0;
+            
+                .wikiText {
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+            
+                    .wikititle {
+                        font-family: heading-font-family;
+                        font-size: $heading-font-size;
+                        margin: 0;
+            
+                        > span {
+                            text-transform: uppercase;
+                        }
+                    }
+            
+                    .wikiPara {
+                        font-family: body-font-family;
+                        font-size: $body-font-size;
+                        text-align: left;
+                        padding: 2em 0;
+                        margin: 0;
+                    }
+                }
+            
+                .wikiPic {
+                    display: flex;
+            
+                    .wikiIcon {
+                        width: 4em;
+                        height: 4em;
+                        position: relative;
+                        top: 0;
+                        left: 5%;
+                        border-radius: 50%;
+                        background-color: $lightBlue;
+            
+                    }
+            
+                    .wikiImg {
+                        margin-top: 2em;
+                        img {
+                            width: 30em;
+                            height: 20em;
+                            border-radius: 1em;
+                        }
+                    }
+                }
+            }
+            
+            // --------------------------------------------------------------------------    
+        }
+        
+    }
+
+    //  Contact Section
+
+    .contactSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $lightBlue;
+
+        .contactContainer {
+            width: 80%;
+            height: 20em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            
+
+            .newsTitle {
+                color: $white;
+                font-family: heading-font-family;
+                font-size: 2em;
+                text-align: start;
+                text-transform: uppercase;
+            }
+
+            .newsletterForm {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+
+
+                .newsInput {
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    width: 30em;
+                    padding: 1.125em 0;
+                    background-color: $lightBlue;
+                    border: 0.125em solid $white;
+                    color: $white;
+                    border-radius: 0.625em 0 0 0.625em;
+                    box-sizing: border-box;
+                    outline: none;
+
+                    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                        color: $white;
+                        padding-left: 1.3em;
+                        &:focus{
+                        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                            color: $white;
+                        }
+                        }
+                    }
+                }
+
+                .newsBtn {
+                    font-family: body-font-family;
+                    font-size: $body-font-size;
+                    cursor: pointer;
+                    padding: 1.250em 1.3em;
+                    background-color: $white;
+                    color: $lightBlue;
+                    text-decoration: none;
+                    border-radius: 0 0.625em 0.625em 0;
+                    border: none;
+                }
+            }
+
+            .followUs {
+
+
+                .followUsTitle {
+                    color: $white;
+                    font-family: heading-font-family;
+                    font-size: 2em;
+                    text-align: end;
+                    text-transform: uppercase;
+                }
+
+                .followUsIcon {
+                    display: flex;
+                    gap: 2em;
+                    padding-bottom: 2em;
+
+                    svg {
+                        width: 4em;
+                        height: 4em;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    // Footer
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .footerContainer {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .footerLogo {
+
+                img {
+                    width: 10em;
+                    height: 5em;
+                }
+            }
+
+            .datenSchützLinks {
+
+                a {
+                    color: $black;
+                    text-align: center;
+                    padding: 14px 16px;
+                    font-family: heading-font-family;
+                    font-size: $heading-font-size;
+                    font-weight: 800;
+                    text-decoration: none;
+                    font-size: 1.063em;
+                }
+
+                a:hover {
+                    color: $lightBlue;
+                }
+            }
+        }
+    }
+
+}

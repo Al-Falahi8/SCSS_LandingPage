@@ -1,0 +1,19 @@
+// Colors
+$lightBlue: #0077FF;
+$black: #000000;
+$white: #FFFFFF;
+
+// Fonts
+@font-face {
+    font-family: heading-font-family;
+    src: url(/assets/fonts/OpenSans-ExtraBold.ttf);
+  }
+  @font-face {
+    font-family: body-font-family;
+    src: url(/assets/fonts/OpenSans-Regular.ttf);
+  }
+
+// Fonts Size
+$heading-font-size-one: 3em;
+$heading-font-size: 1em;
+$body-font-size: 1em;
